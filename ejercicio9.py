@@ -37,16 +37,16 @@ for m in range(0, 40, 4):
 
 #genero la baraja
 
-class carta:
+class carta:  
     lista_de_palos = ["oros", "copas", "espadas", "bastos"]
     lista_de_valores = ["as", "2", "3", "4", "5", "6", "7", "sota", "caballo", "rey"]
 
-def __init__(self, palo=0, valor=0):
-    self.palo = palo
-    self.valor = valor
+    def __init__(self, palo=0, valor=0):
+        self.palo = palo
+        self.valor = valor
 
-def __str___(self):
-    return(self.lista_de_valores[self.valor] + "de" + self.lista_de_palos[self.palos])
+    def __str___(self):
+        return(self.lista_de_valores[self.valor] + "de" + self.lista_de_palos[self.palos])
 
 class baraja:
     def __init__(self):
@@ -65,4 +65,48 @@ def __str__(self):
         s = s + " "*i + str(self.cartas[i]) + "n"
         return s
 
-#
+#generar las cartas de la baraja de forma aleatoria
+
+def mezclar_las_cartas(self):
+    nuevas_cartas = len(self.todas_las_cartas)
+    for i in range(nuevas_cartas):
+        j = random.randrange(i, nuevas_cartas)
+        self.cartas[i], self.cartas[j] = self.cartas[j], self.cartas[i]
+
+#separar la pila baraja en cuatro pilas una por cada palo
+
+class oros():
+    def __init__(self, num):
+        self.num = num
+
+    def __str___(self):
+        return "{} de oros".format(self.num)
+
+
+class copas():
+    def __init__(self, num_2):
+        self.num_2 = num_2
+
+    def __str___(self):
+        return "{} de copas".format(self.num_2)
+
+
+class espadas():
+    def __init__(self, num_3):
+        self.num_3 = num_3
+
+    def __str___(self):
+        return "{} de espadas".format(self.num_3)
+
+
+class bastos():
+    def __init__(self, num_4):
+        self.num_4 = num_4
+
+    def __str___(self):
+        return "{} de bastos".format(self.num_4)
+
+
+#ordenar una de las cuatro pilas(oros, copas, espadas, bastos) de manera creciente
+
+
