@@ -1,11 +1,12 @@
 
 #Desarrollar un algoritmo que permita cargar 1000 número enteros generados de manera aleatoria
 
-class Nodo:
+class NodoArbol:
     def __int__(self, data):
         self.izq = None
         self.der = None
         self.data = data
+        self.altura = 0
 
 #Realizar los barridos inorden, preorden, postorden 
 #INORDEN
@@ -100,3 +101,5 @@ def eliminar_nodo(raiz, clave):
             else:
                 raiz.izq, aux = reemplazar(raiz.izq)
                 raiz.data = aux.data  
+
+#Determinar la altura del subárbol izquierdo y del subárbol derecho
