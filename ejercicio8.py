@@ -7,10 +7,6 @@ class Node:
         self.right = None
         self.data = data
 
-import random
 
-for i in range(1000):
-    print(random.randint(0, 1000))
 
-    
 
