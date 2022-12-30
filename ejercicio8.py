@@ -103,3 +103,31 @@ def eliminar_nodo(raiz, clave):
                 raiz.data = aux.data  
 
 #Determinar la altura del subárbol izquierdo y del subárbol derecho
+def altura(raiz):
+    if(raiz is None):
+        return -1
+    else:
+        return raiz.altura 
+
+def actualizaraltura(raiz):
+    if(raiz is not None):
+        alt.izq = altura(raiz.izq)
+        alt.der = altura(raiz.der)
+        raiz.altura = (alt.izq if alt.izq > alt.der else alt.der) + 1
+
+#Contar cuántos números pares e imapares hay en el árbol
+#VERIFICAR PRIMERO SI EL NUMERO ES PAR O IMPAR
+def par(num):
+    if(num % 2 == 0):
+        return False
+    else:
+        return True
+
+#GENERO EL ÁRBOL DE 0 A 1000
+import random
+rango = 1000
+num_aleatorio = random.randint(0, 1000)
+arbol = NodoArbol(num_aleatorio)
+
+
+
