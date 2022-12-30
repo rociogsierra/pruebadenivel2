@@ -128,6 +128,27 @@ import random
 rango = 1000
 num_aleatorio = random.randint(0, 1000)
 arbol = NodoArbol(num_aleatorio)
+#CONTAR LOS NUMS PARES E IMPARES DEL ARBOL
+#primero inserto un nodo en el arbol
+def insertar_nodo(raiz, nodo, pos):
+    if(raiz is None):
+        raiz = NodoArbol(dato, pos)
+    elif(dato < raiz.data):
+        raiz.izq = insertar_nodo(raiz.izq, dato, pos)
+    else:
+        raiz.der = insertar_nodo(raiz.der, dato, pos)
+
+#comienza el conteo
+cuenta_pares = 0
+cuenta_impares = 0
+for i in range(rango-1):
+    num_aleatorio = random.randint(0, rango)
+    if(par(num_aleatorio)):
+        cuenta_impares += 1
+    else:
+        cuenta_pares += 1
+    arbol = insertar_nodo(arbol, num_aleatorio)    
+
 
 
 
