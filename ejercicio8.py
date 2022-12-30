@@ -1,14 +1,45 @@
 
 #Desarrollar un algoritmo que permita cargar 1000 número enteros generados de manera aleatoria
 
-class Node:
+class Nodo:
     def __int__(self, data):
         self.izq = None
         self.der = None
         self.data = data
 
-#Eliminar 3 elementos del árbol
+#Realizar los barridos inorden, preorden, postorden 
+#INORDEN
+def inorden(raiz):
+    if (raiz is not None):
+        inorden(raiz.izq)
+        print(raiz.data)
+        inorden(raiz.der)
+#PREORDEN
+def preorden(raiz):
+    print(raiz.data)
+    preorden(raiz.izq)
+    preorden(raiz.der)
+#POSTORDEN
+def postorden(raiz):
+    postorden(raiz.der)
+    print(raiz.data)
+    postorden(raiz.izq)
+#POR NIVEL
+def por_nivel(raiz):
+    pendientes = Cola()
+    arribo(pendientes, raiz)
+    while(not cola_vacia(pendientes)):
+        nodo = atencion(pendientes)
+        print(nodo.data)
+        if(nodo.izq is not None):
+            arribo(pendientes, nodo.izq)
+        if(nodo.der is not None):
+            arribo(pendientes, nodo.der)
 
+#Determinar si un número está cargado en el árbol
+
+
+#Eliminar 3 elementos del árbol
 #ELIMINO EL PRIMER ELEMENTO
 def eliminar_nodo(raiz, clave):
     x = None
