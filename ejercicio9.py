@@ -108,5 +108,18 @@ class bastos():
 
 
 #ordenar una de las cuatro pilas(oros, copas, espadas, bastos) de manera creciente
+def Orden(cartas):
+    for i in range(len(cartas)):
+        mini = i
+        for j in range(i+1, len(cartas)):
+            if cartas[j] < cartas[mini]:
+                mini = j
+    cartas[i], cartas[mini] = cartas[mini], cartas[i]
+    return cartas
 
+
+Baraja_en_orden = []
+for i in lista_de_palos:
+    for j in lista_de_valores:
+        Baraja_en_orden.append([i, j])
 
