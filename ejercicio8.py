@@ -37,7 +37,16 @@ def por_nivel(raiz):
             arribo(pendientes, nodo.der)
 
 #Determinar si un número está cargado en el árbol
-
+def buscar(raiz, clave):
+    pos = None
+    if(raiz is not None):
+        if(raiz.data == clave):
+            pos = raiz
+        elif clave < raiz.data:
+            pos = buscar(raiz.izq, clave)
+        else:
+            pos = buscar(raiz.der, clave)
+    return pos
 
 #Eliminar 3 elementos del árbol
 #ELIMINO EL PRIMER ELEMENTO
