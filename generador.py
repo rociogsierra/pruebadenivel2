@@ -27,20 +27,30 @@ def generador():
 #Generar una lista de números aleatorios decimales entre 0 y 100 con tantos números como el usuario haya indicado.
 #normalmente usaría random.randint, pero como se pide que los números deben ser decimales, usaré random.uniform
 
-numeros_aleatorios = []
-for i in range(numeros):
-    num_aleat = random.uniform(0,100)
+    numeros_aleatorios = []
+    for i in range(numeros):
+        num_aleat = random.uniform(0,100)
 
-#Para cada uno de los números, redondearlos en función de lo que el usuario ha especificado en el modo.
-#Posibles modos:
+    #Para cada uno de los números, redondearlos en función de lo que el usuario ha especificado en el modo.
+    #Posibles modos:
 
-#[1] Al alza
-    if(modo == 1):
-        num_redo = math.trunc(num_aleat)+1
-#[2] A la baja
-    elif(modo == 2):
-        num_redo = math.trunc(num_aleat)
-#[3] Normal (entiendo esto como que el número aleatorio será igual al redondeado (?))
-    else:
-        num_aleat = num_redo
-                        
+    #[1] Al alza
+        if(modo == 1):
+            num_redo = math.trunc(num_aleat)+1
+    #[2] A la baja
+        elif(modo == 2):
+            num_redo = math.trunc(num_aleat)
+    #[3] Normal (entiendo esto como que el número aleatorio será igual al redondeado (?))
+        else:
+            num_aleat = num_redo
+    #Para cada número muestra durante el redondeo, el número normal y después del redondeo.
+        print("El número aleatorio es el", num_aleat, "y el número redondeado es el", num_redo, ".")
+    #Finalmente devolver la lista   
+        return numeros_aleatorios
+
+if __name__ == "__main__":
+    generador()
+        
+
+
+
