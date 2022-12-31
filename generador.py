@@ -25,4 +25,22 @@ def generador():
     modo = leer_numero(1, 3, "¿Cómo quieres redondear los números? [1]Al alza [2]A la baja [3]Normal: ")
 
 #Generar una lista de números aleatorios decimales entre 0 y 100 con tantos números como el usuario haya indicado.
+#normalmente usaría random.randint, pero como se pide que los números deben ser decimales, usaré random.uniform
 
+numeros_aleatorios = []
+for i in range(numeros):
+    num_aleat = random.uniform(0,100)
+
+#Para cada uno de los números, redondearlos en función de lo que el usuario ha especificado en el modo.
+#Posibles modos:
+
+#[1] Al alza
+    if(modo == 1):
+        num_redo = math.trunc(num_aleat)+1
+#[2] A la baja
+    elif(modo == 2):
+        num_redo = math.trunc(num_aleat)
+#[3] Normal (entiendo esto como que el número aleatorio será igual al redondeado (?))
+    else:
+        num_aleat = num_redo
+                        
