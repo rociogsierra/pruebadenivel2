@@ -17,7 +17,64 @@ def insertar_nodo(raiz, dato, pos):
     else:
         raiz.der = insertar_nodo(raiz.der, dato, "No")
     return raiz
-    
+
+def decision():
+    habilidades=nodoArbol("Misiones intergalácticas")
+    insertar_nodo(habilidades,"Khan","Si")
+    #Khan es ideal para misiones intergalácticas
+    insertar_nodo(habilidades,"Misión de recuperación","No")
+    #Khan no es ideal para misiones de recuperación
+    insertar_nodo(habilidades.der,"Ant-Man","Si")
+    #Ant Man es ideal para misiones de recuperación
+    insertar_nodo(habilidades.der,"Misión de destrucción","No")
+    #Ant Man no es ideal para misiones de destrucción
+    insertar_nodo(habilidades.der.der,"Hulk","Si")
+    #Hulk es ideal para misiones de destrucción
+    insertar_nodo(habilidades.der.der,"Misión de defensa y recuperación","No")
+    #Hulk no es ideal para misiones de defensa y recuperación
+    insertar_nodo(habilidades.der.der.der,"Capitan América","Si")
+    #Capitán América es ideal para misiones de defensa y recuperación
+    insertar_nodo(habilidades.der.der.der,"Misión de viaje","No")
+    #Capitán América no es ideal para misiones de viaje
+    insertar_nodo(habilidades.der.der.der.der,"Capitana Marvel","Si")
+    #Capitana Marvel es ideal para misiones de viaje
+    insertar_nodo(habilidades.der.der.der.der,"Misión de habilidad","No")
+    #Capitana Marvel no es ideal para misiones de habilidad
+    insertar_nodo(habilidades.der.der.der.der.der,"Khan","Si")
+    #Khan es ideal para misiones de habilidad
+    insertar_nodo(habilidades.der.der.der.der.der,"Misión de recuperación e infiltración","No")
+    #Khan no es ideal para misiones de recuperacion e infiltracion
+    insertar_nodo(habilidades.der.der.der.der.der.der,"The Winter Soldier","Si")
+    #The Winter Soldier es ideal para misiones de recuperación e infiltración
+    insertar_nodo(habilidades.der.der.der.der.der.der,"Misión de defensa y tecnología","No")
+    #The Winter Soldier no es ideal para misiones de defensa y tecnología
+    insertar_nodo(habilidades.der.der.der.der.der.der.der,"Iron Man","Si")
+    #Iron Man es ideal para misiones de defensa y tecnología
+    insertar_nodo(habilidades.der.der.der.der.der.der.der,"Misión rápida","No")
+    #Iron Man np es ideal para misiones rápidas
+    insertar_nodo(habilidades.der.der.der.der.der.der.der.der,"Nick Fury","Si")
+    #Nick Fury es ideal para misiones rápidas
+    insertar_nodo(habilidades.der.der.der.der.der.der.der.der,"Misión destruir ejercito","No")
+    #Nick Fury no es ideal para misiones de destruir ejércitos
+    insertar_nodo(habilidades.der.der.der.der.der.der.der.der.der,"Thor","Si")
+    #Thor es ideal para misiones de destruir ejércitos
+    insertar_nodo(habilidades.der.der.der.der.der.der.der.der.der,"No hay héroe","No")
+    #No se dan más héroes
+
+    return habilidades
+
+def VerMisiones(Heroes):
+    print("Lista de misiones:")
+    for i in Heroes:
+        print("--->",Heroes[i])
+
+
+
+
+
+
+
+
 
 
 

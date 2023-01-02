@@ -1,3 +1,5 @@
+#Determinar el recorrido de menor distancia pasando una vez por cada lugar
+
 graph = [
 [0, 675, 400, 166, 809, 720, 399, 233]
 [675,  0, 540, 687, 179, 348, 199, 401]
@@ -13,7 +15,6 @@ graph = [
 numero_de_vertices = 8
 primer_vertice = 6 #"SHIELD"
 
-#Nombres superhéroes
 
 
 
