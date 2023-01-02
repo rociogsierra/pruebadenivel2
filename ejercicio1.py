@@ -63,18 +63,36 @@ def decision():
 
     return habilidades
 
-def VerMisiones(Heroes):
+def VerMision(superheroes):
     print("Lista de misiones:")
-    for i in Heroes:
-        print("--->",Heroes[i])
+    for i in superheroes:
+        print("--->",superheroes[i])
 
+def SeleccionarMision(NombreMision,Escuadron):
+    if(Escuadron.izq is None):
+        return Escuadron.info
+    elif(Escuadron.info==NombreMision):
+        return SeleccionarMision(NombreMision, Escuadron.izq)
+    else:
+        return SeleccionarMision(NombreMision, Escuadron.der)
 
+superheroes = { "Khan" : "Misiones intergalacticas",
+"Ant-Man":"Misión de recuperacion",
+"Hulk": "Misión de destruccion",
+"Capitan America" : "Misión de defensa y recuperacion",
+"Capitana Marvel" : "Misión de viaje",
+"Khan" : "Misión de habilidad",
+"The Winter Soldier" : "Misión de recuperacion e infiltracion",
+"Iron Man" : "Misión de defensa y tecnologia",
+"Nick Fury" : "Misión rapida",
+"Thor" : "Misión destruir ejercito"
+}   
 
-
-
-
-
-
+EscuadronSHIELD = decision()
+VerMision(superheroes)
+print("LA MISIÓN SERÁ: ")
+Mision = input()
+print("la misión {} estará asignada al superheroe {}").format(SeleccionarMision(Mision, EscuadronSHIELD), Mision)
 
 
 
